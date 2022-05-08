@@ -39,7 +39,7 @@ jobs:
         run: |
           echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
 
-          echo "$key1"
+          echo "${{github.event.inputs.key1}}"
 
           python --version
           echo "Step 1: Installing schemachange"
