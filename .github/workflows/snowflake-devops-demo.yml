@@ -11,7 +11,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
-      key1: 'Log level'     
+      key1:
+        description: 'Environment to run tests against'
+        type: environment
+        required: true  
       
 
 jobs:
