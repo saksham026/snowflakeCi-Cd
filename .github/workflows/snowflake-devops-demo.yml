@@ -10,6 +10,9 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      key1: 'Log level'     
+      
 
 jobs:
   deploy-snowflake-changes-job:
@@ -35,6 +38,9 @@ jobs:
           SNOWFLAKE_PASSWORD: ${{ secrets.SF_PASSWORD }}
         run: |
           echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
+
+          echo "$key1"
+
           python --version
           echo "Step 1: Installing schemachange"
           pip install schemachange
