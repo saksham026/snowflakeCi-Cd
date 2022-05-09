@@ -13,7 +13,7 @@ on:
     inputs:
       key1:
         description: 'Environment to run tests against'
-        required: true  
+        required: true
       
 
 jobs:
@@ -40,7 +40,12 @@ jobs:
           SNOWFLAKE_PASSWORD: ${{ secrets.SF_PASSWORD }}
         run: |
           echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
+          require 'json'
 
+          data = JSON.parse(${{github.event.inputs.key1}})
+          first_name = data["first_name"]
+          echo "${{first_name}}"
+          
           echo "${{github.event.inputs.key1}}"
 
           python --version
