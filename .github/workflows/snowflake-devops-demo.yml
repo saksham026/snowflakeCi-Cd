@@ -43,9 +43,9 @@ jobs:
           require 'json'
 
           data = JSON.parse(${{github.event.inputs.key1}})
-          first_name = data["first_name"]
+          first_name = "a"
           echo "${{first_name}}"
-          
+
           echo "${{github.event.inputs.key1}}"
 
           python --version
