@@ -40,12 +40,6 @@ jobs:
           SNOWFLAKE_PASSWORD: ${{ secrets.SF_PASSWORD }}
         run: |
           echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
-          require 'json'
-
-          data = JSON.parse(${{github.event.inputs.key1}})
-          first_name = "a"
-          echo "${{first_name}}"
-
           echo "${{github.event.inputs.key1}}"
 
           python --version
